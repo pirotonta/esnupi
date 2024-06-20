@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* estructura */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: lightpink;
+}
+
+#main {
+    display: flex;
+    min-height: calc(100vh - 40vh);
+}
+
+#main .wrapper {
+    flex: 1;
+}
+
+#main>nav {
+    flex: 0 0 20vw;
+    order: -1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0px 10px 0px 10px;
+}
+
+#main nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+header,
+footer,
+.wrapper,
+nav,
+aside {
+    padding: 1em;
+}
+
+/* header,
+footer {
+    height: 20vh;
+} */
+
+#mainheader{
+    height: 20vh;
+    position: sticky;
+    top:0px;
+    background-color: white;
+    padding: 20px;
+    text-align: left;
+    font-size: 30px;
+    color: lightpink;   
+    border-bottom: 10px solid lightpink;
+    /* border-radius: 10px; */
+}
+
+footer{
+    height: 10vh;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    color: lightpink;
+    border-top: 10px solid lightpink;
+}
+
+
+.wrapper{
+    height: max-content;
+    background: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.wrapper header{
+    display: flex;
+    align-items: center;
+    padding: 25px 30px 10px;
+    justify-content: space-between;
+}
+
+header .fecha-actual{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+header .simbolos span{
+    height: 38px;
+    width: 38px;
+    color: lightpink;
+    font-size: 1.9rem;
+    margin: 0 1px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 50%;
+}
+
+header .simbolos span:hover{
+    background: #f2f2f2;
+}
+
+header .simbolos span:last-child{
+    margin-right: -10px;
+}
+
+.calendario{
+    padding: 20px; 
+}
+
+.calendario ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.calendario .semana li{
+    font-weight: 500;
+}
+
+.calendario .dias{
+    margin-bottom: 20px;
+}
+
+
+.calendario ul li{
+    position: relative;
+    width: calc(100%/7);
+}
+
+.calendario .dias li{
+    z-index: 1;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.dias li.inactive{
+    color: #aaa;
+}
+
+
+.calendario .dias li::before{
+    position: absolute;
+    content: "";
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.dias li.active::before{
+    background:lightpink;
+}
+
+.dias li:hover::before{
+    background: #f2f2f2;
+}
+
+.dias li:active::before{
+    background:lightpink;
+}
